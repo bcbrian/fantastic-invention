@@ -45,7 +45,10 @@ function startGame() {
 
   const letter = getRandomValue(choices);
   const redZaneEl = document.getElementById("RedZane");
-  redZaneEl.innerHTML = letter.toUpperCase();
+  const accordingToBo = getRandomValue([0, 1]) === 0;
+  redZaneEl.innerHTML = accordingToBo
+    ? letter.toUpperCase()
+    : letter.toLowerCase();
 
   const wolfhoundjesseEl = document.getElementById("wolfhoundjesse");
   wolfhoundjesseEl.innerHTML = "";
@@ -53,18 +56,18 @@ function startGame() {
   for (let i = 0; i < choices.length; i++) {
     const choice = choices[i];
     const btnEl = document.createElement("button");
-    btnEl.innerHTML = choice;
+    btnEl.innerHTML = accordingToBo
+      ? choice.toLowerCase()
+      : choice.toUpperCase();
     btnEl.classList.add("btn-choice");
     wolfhoundjesseEl.append(btnEl);
 
     btnEl.addEventListener("click", function() {
       if (choice.toLowerCase() === letter.toLowerCase()) {
-        alert("winner");
         startGame();
       }
     });
   }
-  // alert("what matches " + letter + " in " + choices);
 }
 
 startGame();

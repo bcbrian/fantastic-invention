@@ -28,7 +28,7 @@ button {
 }
 
 .t-class {
-  font-family: sans-serif;
+  font-family: "Mansalva", cursive;
   letter-spacing: 1.1;
   font-size: 72px;
   text-align: center;
@@ -36,7 +36,7 @@ button {
 
 .btn-choice {
   text-transform: none;
-  font-family: sans-serif;
+  font-family: "Mansalva", cursive;
   letter-spacing: 1.1;
   font-size: 72px;
   text-align: center;
